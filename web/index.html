@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+        <style>
+            #loader-holder {
+                position: fixed;
+                z-index: 100;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                display: none;
+              }
+
+              #loader {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                background-color: tomato;
+                top: 50%;
+                left: 50%;
+                border-radius: 50%;
+                transform-origin: ceenter center;
+                animation: spin 2s ease-in-out 0s normal infinite;
+              }
+
+              #loader::after {
+                content: "";
+                position: absolute;
+                background-color: black;
+                height: 15%;
+                width: 15%;
+                top: 15%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                border-radius: 50%;
+              }
+
+              @keyframes spin {
+                0% { transform: rotate(0deg);}
+                100% { transform: rotate(360deg);}
+              }
+        </style>
+    </head>
+    <body>
+        
+        <div id="loader-holder"><div id="loader"></div></div>
+        
+        <div class="modal" tabindex="-1" role="dialog" id="modalExito">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title">¡Éxito!</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Se registro a su usuario con exito.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <div class="modal" tabindex="-1" role="dialog" id="modalFallo">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title">¡Algo salio mal!</h2>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Algo salio muy mal mientras registrabamos a su usuario, por favor contacte al personal pertinente.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row main">
+                <div class="main-login main-center">
+                    <h5>Registrate para tener acceso.</h5>
+                    <form class="" method="post" action="#" id="formulario">
+                        
+                        <div class="form-group">
+                            <label for="name" class="cols-sm-2 control-label">Tu nickname</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="nickname" id="nickname"  placeholder="NIckname"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="name" class="cols-sm-2 control-label">Tu nombre</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="name" id="name"  placeholder="Juan Armando"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="paterno" class="cols-sm-2 control-label">Tu apellido paterno</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="materno" id="paterno"  placeholder="Perez"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="materno" class="cols-sm-2 control-label">Tu apellido materno</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="paterno" id="materno"  placeholder="Gomez"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono" class="cols-sm-2 control-label">Tu télefono</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="tel" id="telefono"  placeholder="3317955644"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono" class="cols-sm-2 control-label">Tu correo eléctronico</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="email" id="email"  placeholder="usuario@server.com"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pass" class="cols-sm-2 control-label">Tu contraseña</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input type="password" class="form-control" name="pass" id="pass"  placeholder="********"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="passconf" class="cols-sm-2 control-label">Confirma tu contraseña</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input type="password" class="form-control" name="passconf" id="passconf"  placeholder="********"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <button type="button" id="button" class="btn btn-primary btn-lg login-button" onclick="registro()">Registrarse</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script src="js/bootstrap.min.js" ></script>
+        <script src="js/actions.js" ></script>
+        
+    </body>
+</html>
